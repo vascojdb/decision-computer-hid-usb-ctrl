@@ -2,7 +2,7 @@
 # Makefile -- 
 #
 
-PROG		= DecisionUsb
+PROG		= DecisionUsb-dio
 VERSION		= 1.0
 NAME		= $(PROG)-$(VERSION)
 
@@ -18,7 +18,7 @@ endif
 #
 
 OBJS			= dcihid.o main.o
-EXES			= DecisionUsb
+EXES			= DecisionUsb-dio
 HEADERS			= 
 
 

@@ -207,10 +207,10 @@ main(int argc, char *argv[])
                 printf("  -b <byte> is the byte to be written while using -w <port>: 0x00 to 0xFF\n");
                 printf("  -s/c <bit> is the bit to be set/clear while using -w <port>: 0 to 7\n");
                 printf("Examples:\n");
-                printf("  DecisionUsb -d /dev/usb/hiddev0 -t 0x06 -i 0 -r 0x02\n");
-                printf("  DecisionUsb -d /dev/usb/hiddev0 -t 0x06 -i 0 -w 0x02 -b 0x88\n");
-                printf("  DecisionUsb -d /dev/usb/hiddev0 -t 0x06 -i 0 -w 0x02 -s 5\n");
-                printf("  DecisionUsb -d /dev/usb/hiddev0 -t 0x06 -i 0 -w 0x02 -c 2\n");
+                printf("  %s -d /dev/usb/hiddev0 -t 0x06 -i 0 -r 0x02\n", argv[0]);
+                printf("  %s -d /dev/usb/hiddev0 -t 0x06 -i 0 -w 0x02 -b 0x88\n", argv[0]);
+                printf("  %s -d /dev/usb/hiddev0 -t 0x06 -i 0 -w 0x02 -s 5\n", argv[0]);
+                printf("  %s -d /dev/usb/hiddev0 -t 0x06 -i 0 -w 0x02 -c 2\n", argv[0]);
                 return 0;
                 break;
             case ':':

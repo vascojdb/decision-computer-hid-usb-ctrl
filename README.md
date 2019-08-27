@@ -47,28 +47,28 @@ make
 ## Running:
 Just run the application with '-h' from the terminal and you will see the help. Note that **you need root previleges**!
 ```shell
-./DecisionUsb -h
+./DecisionUsb-dio -h
 ```
 
 ## Examples: 
 Here are some examples on how to run the standalone application:
 ```shell
 # Read port 0x02 on HID device hiddev0, of type 0x06 and ID 0:
-./DecisionUsb -d /dev/usb/hiddev0 -t 0x06 -i 0 -r 0x02
+./DecisionUsb-dio -d /dev/usb/hiddev0 -t 0x06 -i 0 -r 0x02
 # Write byte 0x88 on port 0x02 on HID device hiddev0, of type 0x06 and ID 0:
-./DecisionUsb -d /dev/usb/hiddev0 -t 0x06 -i 0 -w 0x02 -b 0x88
+./DecisionUsb-dio -d /dev/usb/hiddev0 -t 0x06 -i 0 -w 0x02 -b 0x88
 # Set bit 5 on port 0x02 on HID device hiddev0, of type 0x06 and ID 0:
-./DecisionUsb -d /dev/usb/hiddev0 -t 0x06 -i 0 -w 0x02 -s 5
+./DecisionUsb-dio -d /dev/usb/hiddev0 -t 0x06 -i 0 -w 0x02 -s 5
 # Clear bit 2 on port 0x02 on HID device hiddev0, of type 0x06 and ID 0:
-./DecisionUsb -d /dev/usb/hiddev0 -t 0x06 -i 0 -w 0x02 -c 2
+./DecisionUsb-dio -d /dev/usb/hiddev0 -t 0x06 -i 0 -w 0x02 -c 2
 ```
 You will have something similar to this as output:
 ```shell
-$ ./DecisionUsb -d /dev/usb/hiddev1 -t 0x06 -i 0 -w 0x01 -b 0x46
+$ ./DecisionUsb-dio -d /dev/usb/hiddev1 -t 0x06 -i 0 -w 0x01 -b 0x46
 Using HID device /dev/usb/hiddev1 to connect with card of type 0x06 and ID 0
 Writing value 0x46 on port address: 0x01
 [0x01]=0x46
-$ ./DecisionUsb -d /dev/usb/hiddev1 -t 0x06 -i 0 -r 0x01
+$ ./DecisionUsb-dio -d /dev/usb/hiddev1 -t 0x06 -i 0 -r 0x01
 Using HID device /dev/usb/hiddev1 to connect with card of type 0x06 and ID 0
 Reading value on port address: 0x01
 [0x01]=0x46
