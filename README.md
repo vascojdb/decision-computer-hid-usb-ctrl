@@ -44,6 +44,12 @@ make clean
 make
 ```
 
+## Installing the application:
+You can install the application on your machine if you would like. The following command will install the `DecisionUsb-dio` binary under `/usr/local/bin/`
+```shell
+sudo make install
+```
+
 ## Running:
 Just run the application with '-h' from the terminal and you will see the help. Note that **you need root previleges**!
 ```shell

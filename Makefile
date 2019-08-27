@@ -5,6 +5,7 @@
 PROG		= DecisionUsb-dio
 VERSION		= 1.0
 NAME		= $(PROG)-$(VERSION)
+IMGDIR		= /usr/local/bin
 
 ifneq (,)
 This makefile requires GNU Make.
@@ -52,17 +53,17 @@ all:	$(EXES)
 $(EXES): $(OBJS) $(LIB)
 	$(CC) -o $@ $(OBJS) $(LDFLAGS) $(XTRALDFLAGS)
 	$(STRIP) $@
+	@echo Compilation done.
 
 .PHONY:		install
 install:	$(EXES)
+	@echo Installing in ${IMGDIR}...
 	[ -d ${IMGDIR}  ] || install -d ${IMGDIR}
 	install -m 755 ${EXES} ${IMGDIR}
-
-.PHONY:	deploy
-deploy:	$(EXES)
-	[ -d ${EXEDIR}  ] || install -d ${EXEDIR}
-	install -m 755 ${EXES} ${EXEDIR}
+	@echo Install concluded.
 
 .PHONY:	clean distclean
 distclean clean:
+	@echo Cleaning up...
 	-rm -f *.o *.s *~ core a.out build-stamp $(LIB) $(EXES)
+	@echo All cleaned.
