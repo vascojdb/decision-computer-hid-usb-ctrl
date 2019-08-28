@@ -2,7 +2,7 @@
 # Makefile -- 
 #
 
-PROG		= DecisionUsb-dio
+PROG		= DecisionUsbdio
 VERSION		= 1.0
 NAME		= $(PROG)-$(VERSION)
 IMGDIR		= /usr/local/bin
@@ -19,7 +19,7 @@ endif
 #
 
 OBJS			= dcihid.o main.o
-EXES			= DecisionUsb-dio
+EXES			= DecisionUsbdio
 HEADERS			= 
 
 
