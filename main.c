@@ -47,7 +47,7 @@ main(int argc, char *argv[])
     }
     
     // Loop through all arguments:
-    while ((opt = getopt(argc, argv, "d:t:i:r:w:f:b:s:c:h")) != -1) {  
+    while ((opt = getopt(argc, argv, "d:t:i:r:w:f:b:s:c:hv")) != -1) {  
         switch (opt) {
             case 'd':
                 // Set the device to use:
@@ -87,12 +87,12 @@ main(int argc, char *argv[])
             case 's':
                 // Bit to be set later using OR:
                 access_mode = WRITE_SET_BIT;
-                data = (u_int8_t)strtol(optarg, NULL, 10);
+                data = (u_int8_t)atoi(optarg);
                 break; 
             case 'c':
                 // Bit to be cleared later using AND:
                 access_mode = WRITE_CLEAR_BIT;
-                data = (u_int8_t)strtol(optarg, NULL, 10);
+                data = (u_int8_t)atoi(optarg);
                 break; 
             case 'h':
                 // Print help:
@@ -211,6 +211,11 @@ main(int argc, char *argv[])
                 printf("  %s -d /dev/usb/hiddev0 -t 0x06 -i 0 -w 0x02 -b 0x88\n", argv[0]);
                 printf("  %s -d /dev/usb/hiddev0 -t 0x06 -i 0 -w 0x02 -s 5\n", argv[0]);
                 printf("  %s -d /dev/usb/hiddev0 -t 0x06 -i 0 -w 0x02 -c 2\n", argv[0]);
+                return 0;
+                break;
+            case 'v':
+                printf("%s: Application to control DCI USB HID devices from Decision-Computer\n", argv[0]);
+                printf("Version: 1.0 (2019/08/28) coded by Vasco Baptista\n");
                 return 0;
                 break;
             case ':':
