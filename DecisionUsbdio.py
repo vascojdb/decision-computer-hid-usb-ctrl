@@ -7,8 +7,6 @@ __email__ = "vascojdb@gmail.com"
 
 import sys
 import os
-import time
-import serial
 
 class DecisionUsbdio:
     """
