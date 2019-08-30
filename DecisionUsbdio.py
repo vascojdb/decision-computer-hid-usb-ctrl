@@ -41,16 +41,16 @@ class DecisionUsbdio:
                 return int(val, 0)
 
     def read_byte(self, port):
-        return self.__send_command(port, 'r')
+        return self.__send_command(str(port), 'r')
 
     def write_byte(self, port, byte):
-        return self.__send_command(port, 'w', 'b', byte)
+        return self.__send_command(str(port), 'w', 'b', str(byte))
 
     def set_bit(self, port, bit):
-        return self.__send_command(port, 'w', 's', bit)
+        return self.__send_command(str(port), 'w', 's', str(bit))
 
     def clear_bit(self, port, bit):
-        return self.__send_command(port, 'w', 'c', bit)
+        return self.__send_command(str(port), 'w', 'c', str(bit))
 
 
 def print_usage():
